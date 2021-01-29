@@ -1,0 +1,150 @@
+What is Angular ?
+
+Angular is a developement platform for building a Single page applications for mobile and desktop
+
+1. It uses typescript & HTML to build applications
+2. Angular is written using typescript
+3. It comes with features like components, directives, Forms, Pipes, Services. DI (Dependency Injection)
+
+Angular versions
+----------------
+Early version on angular was named as Angular2, later it was renamed to Angular
+
+Angular team releases new versions of the Angular regularly ( approximately for every 6 months)
+
+Latest stable version is 11.1.1
+
+Angular is developed and maintained by Google. It has large comunity using whihc we can find 
+help over the internet easily
+
+Features of Angular
+--------------------
+1. Two-way Binding  - Data binding is fast and automatic 
+                    - Changes made to the view is automatically
+                      updated in the component class and vice versa
+
+2. Powerful Routing Support
+
+3. Expressive HTML - We can use programming contsructs like, if conditions
+                     for loops etc.. to render and control HTML pages
+
+4. Modular by Design - Angular follows modular design. We can create modules
+                       to better organize and manage our codebase.
+
+
+Angular CLI
+-----------
+Angular CLI is a command-line interface tool that use to initialize, develop,
+scaffold and maintain Angular applications directly from a command shell
+
+1. npm install -g @angular/cli ( -g flag stands for global)
+2. ng new angular-app (create a new folder)
+3. cd angular-app
+4. ng serve or npm start
+
+component Selector
+------------------
+1. Selector can be directly used by typing element name or by attribute selector or by class selector
+
+ selector : 'app-root'            <app-root></app-root>
+
+ selector : '[app-root]'          <div app-root></div>
+
+ selector : '[app="app-root"]'    <div app="app-root"></div>
+
+ selector : '.app-root'           <div class="app-root></div>
+
+
+ Template and templateURLs
+ -------------------
+ Temaplte - internal HTML
+ 
+   template: `
+              <div class="container">
+                <h1>This is using inline template</h1>
+                <h1> {{fullName}} </h1>
+              </div>
+            `,
+
+ Template URL - External HTML file - './app.component.html'
+
+ Style & StyleURLs
+ ------------------
+ Styles  : internal class
+
+   styles: [`
+                h1 {
+                  font-weight: bold;
+                  color: #00FF00
+                }
+            `]
+
+ Style URL - External CSS File - ['./app.component.css']
+
+ Data Binding
+ ------------
+ Data binding keeps both component and view in sync with each other
+
+One-way Binding
+-------------------
+
+ Interpolation ({{ }}) - double curly braces 
+  content inside the double curly braces is called "template expression"
+
+  writing static text inside double curly braces
+
+  {{'hello world'}} - Single quote
+  {{"hello world"}}  - Double quotes
+
+ Property Binding 
+-------------------
+   text = 'Welcome to Angular'
+   isDisabled = false;
+   url ="https://cli.angular.io/"
+
+  <h1 [innerText]="text"></h1>
+  <button [disabled]="isDisabled">I am disabled</button><br><br>
+  <a [href]="url" [target]="target" >Angular CLI</a>
+
+ Two-way binding
+ ----------------
+  firstName = 'Scott'
+ <input type="text" [(ngModel)]="firstName" class="form-control"> <br>
+
+ Event Binding 
+ --------------
+ fullName ='Tuan Bui'
+ 
+<button (click)="getName()" class="btn btn-primary">Get FullName</button><br>
+
+   getName(){
+    console.log(this.fullName)
+     this.fullName = 'Adam Colson'
+     console.log(this.fullName)
+   }
+
+  
+  Angular directives
+  -------------------
+  Angular Directives helps us to manipulate the developement
+
+  we can chnage the appearance. behaviour or layout of a DOM element using Directives.
+
+  They help us to extend the HTML
+
+  Structural Directives                         Attribute directives
+  ----------------------                       -----------------------
+  *ngFor                                          ngModel
+  *ngSwitch                                       ngClass
+  *ngif                                           ngStyle
+
+  *ngFor
+  ----------
+  Angular ngFor directive iterates over a collection of data. 
+  like an array, list etc and create HTML element for each of 
+  the items from a HTml tempalate
+
+  It helps us to build lists ot tables to display tabular data
+  in a nice way
+
+  the syntax strats with *ngFor , The * represents Angular Template Syntax

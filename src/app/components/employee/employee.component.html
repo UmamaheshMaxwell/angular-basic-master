@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Employee List</h1>
+    <ul *ngFor="let employee of employeeList">
+        <li>{{employee.name}}</li>
+        <li>{{employee.email}}</li>
+        <li>
+            <ul *ngFor="let skill of employee.skills">
+                <li>{{skill.skill}}</li>
+                <li>{{skill.exp}}</li>
+            </ul>
+        </li>
+    </ul>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Count</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Skills</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employeeList; let id=index; let count=count;">
+                <td>{{id+1}}</td>
+                <td>{{count}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr *ngFor="let skill of employee.skills">
+                                <td>{{skill.skill}}</td>
+                                <td>{{skill.exp}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
