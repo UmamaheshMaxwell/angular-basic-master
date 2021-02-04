@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>ngClass Directive</h1>
+    <div [ngClass]="'red size20'">
+        Red text with size 20px
+    </div>
+    <br>
+    <div [ngClass]="['red', 'size20']">
+        Red text with size 20px
+    </div>
+    <br>
+    <div [ngClass]="{'red': true, 'size20': true}">
+        Red text with size 20px
+    </div>
+    <br>
+    <h1>Using dynamic class from components</h1>
+    <div [ngClass]="cssString">
+        Red text with size 20px
+    </div>
+    <br>
+    <div [ngClass]="cssArray">
+        Red text with size 20px
+    </div>
+    <br>
+    <div [ngClass]="cssObject">
+        Red text with size 20px
+    </div>
+    <br>
+</div>

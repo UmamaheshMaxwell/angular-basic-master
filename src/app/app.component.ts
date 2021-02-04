@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
    title = 'Mr.';
-   firstName = 'Scott'
+   firstName = "Scott's"
    lastName = 'Desatnick'
    fullName ='Tuan Bui'
    text = 'Welcome to Angular'

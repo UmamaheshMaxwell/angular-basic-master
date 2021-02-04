@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>NgIf Directive</h1>
+    <input type="checkbox" [(ngModel)]="show">
+    <div *ngIf="show">NgIf : Display this content</div>
+    <br>
+    <p [hidden]="!show">
+        Hidden : Display content of P
+    </p>
+    <br>
+    <p hidden>This is data content</p>
+</div>
+
+<div *ngIf="show; else display">
+    Lorem ipsum dolor sit amet.
+</div>
+
+<ng-template #display>
+    Learn one way to build applications with Angular 
+    and reuse your code and abilities to build apps 
+    for any deployment target.
+</ng-template> <br><br>
+
+
+<div *ngIf="show; then thenBlock else display">
+    This is not shown
+</div>
+
+<ng-template #thenBlock>
+    Achieve the maximum speed possible on the Web Platform today, 
+    and take it further, via Web Workers and server-side rendering.
+</ng-template>
+
+<!-- <ng-template #elseBlock>
+    Angular puts you in control over scalability. Meet huge data requirements 
+    by building data models on RxJS, Immutable.js or another push-model.
+</ng-template> -->

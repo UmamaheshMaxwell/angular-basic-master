@@ -53,6 +53,15 @@ component Selector
  selector : '[app="app-root"]'    <div app="app-root"></div>
 
  selector : '.app-root'           <div class="app-root></div>
+ 
+
+ commands to create componenets, directives etc
+ -------------------------------------------------
+ create component -  ng generate component componentName  /
+                     ng g c componentName
+
+create directive  -  ng generate directive directiveName /
+                     ng g d directiveName
 
 
  Template and templateURLs
@@ -148,3 +157,84 @@ One-way Binding
   in a nice way
 
   the syntax strats with *ngFor , The * represents Angular Template Syntax
+
+  *ngSwitch
+  ----------
+  It is an angular structual directive which allows us to add or remove DOM elements
+
+  it works in conjunction with ngSwitchCae & ngSwitchDefault
+
+  <container-elemnt [ngSwitch]="switch_expression">
+    <inner_elemnet *ngSwitchCase="expression"></inner_element>
+    <inner_elemnet *ngSwitchCase="expression"></inner_element>
+    <inner_elemnet *ngSwitchCase="expression"></inner_element>
+    <inner_elemnet *ngSwitchCaseDefault></inner_element>
+  <container-elemnt>
+
+ [ngSwitch]
+----------
+  It is bound to container element like div
+  we assign switch expression via property binding
+
+  ngSwitchCase
+  ------------
+  This is bound to inner element which we must place inside container element
+  We use *(Asterik Symbol) because it is structural directive
+
+  ngSwitchDefault
+  ----------------
+  It is bount to inner element, which we must place inside the container
+  
+*ngIf
+-----
+Allows us to add or remove DOM element based on some condition
+
+We can add this to any element like div, p, h1 etc
+
+It must be prefixed with *
+
+
+ngClass
+--------
+Adds or removes CSS classes on an HTML elements
+
+ngClass with a string
+---------------------
+We can use the string as expression and bind it directly to ngClass attribbute
+
+we can add multiple classes with space between each class
+
+ngClass with array
+------------------
+We can achieve the same result by using an array instead of a string 
+
+ngClass with Object
+-------------------
+We can achieve the same result by using an object instead of a array 
+
+ngStyle
+--------
+Allows us to set the inline style of a HTML element using expression
+
+Custom Directives-
+--------------------
+
+Element Ref :  is a service that grants direct acess to the DOM element 
+               thorugh its native Element property
+
+Custom Directives
+-------------------
+The Angular pipes are used to transform the data
+
+We can pass arguments to pipe and chain pipes
+
+These arguments can be added to the pipe using a colon (:) 
+and followed by the value of the argument
+
+The angular allows us to create custom pipes
+
+Angular pipes takes data as input and formats or transform the data
+to diplay in the template
+
+in-built pipes: Currency pipe, date pipe, number pipe,  
+               percent pipe, decimal pipe, slice pipe etc.

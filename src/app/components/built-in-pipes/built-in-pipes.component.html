@@ -1,0 +1,48 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <p>Unformatted Date : {{toDate}}</p>
+    <p>Formatted Date : {{toDate | date}}</p>
+    <p>Medium : {{toDate | date : 'medium'}}</p>
+    <p>Short : {{toDate | date : 'short'}}</p>
+    <p>fullDate : {{toDate | date : 'full'}}</p>
+    <p>longDate : {{toDate | date : 'long'}}</p>
+    <br><br>
+    <h1>{{titleCase}}</h1>
+    <p>Uppercase: {{message | uppercase}}</p>
+    <p>Lowercase: {{message | lowercase}}</p>
+    <br><br>
+    <h1>{{titleSlice}}</h1>
+    <p>Complete String : {{messageSlice}}</p>
+    <p>Sliced String : {{messageSlice| slice : 10:20}}</p>
+    <br><br>
+    <h1>{{titleDecimal}}</h1>
+    <p>Unformatted : {{decimalValue}}</p>
+    <p>Formatted: {{decimalValue | number}}</p>
+    <p>Formatted: {{decimalValue | number:'6.1-1'}}</p>
+    <p>pi (3.1-5): {{pi | number:'3.1-5'}}</p>
+    <br><br>
+    <h1>{{titleCurrency}}</h1>
+    <p>Unformatted Currency : {{currency}}</p>
+    <p>Formatted Currency : {{currency | currency}}</p>
+    <p>Formatted Currency to INR : {{currency | currency: 'INR': true: '3.2-2'}}</p>
+    <p>B: {{currency | currency:'CAD':'symbol':'4.2-2'}}</p>
+    <p>A: {{currency | currency:'CAD':'code'}}</p>
+    <br><br>
+    <h1>{{titlePercentage}}</h1>
+    <p>Unformatted:  {{percentageValue}}</p>
+    <p>Formatted: {{percentageValue |percent}}</p>
+    <p>Formatted: {{percentageValue |percent : '1.2-2'}}</p>
+    <br><br>
+    <h1>Custom Pipes</h1>
+    <p>Formatted Indian Currency : {{currency | currencyIndia}}</p>
+    <br><br>
+    <h1>Gender Custome Pipe</h1>
+    <p>Name1:  {{"Srujana" | gender : 'female'}}</p>
+    <p>Name2: {{"Sri Harsha" | gender : 'male'}}</p>
+    <p>Name3: {{"Gurunath" | gender : 'male'}}</p>
+    <p>Name4:  {{"Anand" | gender : 'male'}}</p>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+
+</div>
