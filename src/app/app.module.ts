@@ -16,6 +16,14 @@ import { EmojiDirective } from './directives/emoji.directive';
 import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
 import { GenderPipe } from './pipes/gender.pipe';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
+import { ParentOneComponent } from './components/parent-one/parent-one.component';
+import { ChildOneComponent } from './components/child-one/child-one.component';
+import { ParentTwoComponent } from './components/parent-two/parent-two.component';
+import { ChildTwoComponent } from './components/child-two/child-two.component';
+import { ParentThreeComponent } from './components/parent-three/parent-three.component';
+import { ChildThreeComponent } from './components/child-three/child-three.component';
 
 
 @NgModule({
@@ -33,7 +41,15 @@ import { GenderPipe } from './pipes/gender.pipe';
     EmojiDirective,
     BuiltInPipesComponent,
     CurrencyPipe,
-    GenderPipe
+    GenderPipe,
+    ParentComponent,
+    ChildComponent,
+    ParentOneComponent,
+    ChildOneComponent,
+    ParentTwoComponent,
+    ChildTwoComponent,
+    ParentThreeComponent,
+    ChildThreeComponent
   ],
   imports: [
     BrowserModule,

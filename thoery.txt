@@ -238,3 +238,57 @@ to diplay in the template
 
 in-built pipes: Currency pipe, date pipe, number pipe,  
                percent pipe, decimal pipe, slice pipe etc.
+
+Component Communication
+-----------------------
+Components are useless if they do not share data between them
+
+The parent component communicates with child component using @Input Annotation
+
+The child component can communicate with the parent by raising an event which parent can listen
+
+Parent to Child
+------------------
+
+1. Create parent and child components
+2. In the child component, import @Input module from @angular/core library
+3. Mark those properties which we need data from parent, as Input property using @Input decorator
+4. Bind the child component property in the parent compoent when initializing the child
+5. @Input decorator is used to configure the input properties of the component
+
+
+Child to Parent
+----------------
+There are three ways in which parent component can interact with child component
+
+1. Parent listens to child event
+2. Parent uses local variable to access the child
+3. Parent uses @viewChild to get reference to the child component
+
+Parent listens to child event
+-------------------------------
+1. The child component exposes an eventEmitter property
+2. This property is decorated with @Output decorator 
+3. when the child component needs to communicate with parent it raises the event
+4. The parent component listens to that event and reacts to it
+
+EventEmitter
+------------
+To raise an event the component must declare an EventEmitter property 
+The event can be emitted by calling emit() method
+
+Output decorator
+----------------
+To make the event accesssible from parent component we must 
+decorate the property with @Output decorator 
+
+Parent uses local variable to access the child
+------------------------------------------------
+1. Parent teamplate can access child compoent properties and methods 
+   by creating a template reference variable
+
+Parent uses @viewChild to get reference to the child component
+---------------------------------------------------------------
+1. Injecting an instance of the child component into the parent as @viewchild 
+2. @ViewChild decorator takes the name of the component/directive as its input
+3. The Angular then injects the reference of the component to the property
