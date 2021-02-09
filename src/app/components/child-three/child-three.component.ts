@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ChildThreeComponent implements OnInit {
 
   count = 0;
-  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +18,7 @@ export class ChildThreeComponent implements OnInit {
     this.count ++;
   }
 
+  
   decrement(){
     this.count --;
   }

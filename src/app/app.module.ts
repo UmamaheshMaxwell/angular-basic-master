@@ -24,6 +24,12 @@ import { ParentTwoComponent } from './components/parent-two/parent-two.component
 import { ChildTwoComponent } from './components/child-two/child-two.component';
 import { ParentThreeComponent } from './components/parent-three/parent-three.component';
 import { ChildThreeComponent } from './components/child-three/child-three.component';
+import { ParentLifeCycleComponent } from './components/parent-life-cycle/parent-life-cycle.component';
+import { ChildLifeCycleComponent } from './components/child-life-cycle/child-life-cycle.component';
+import { ParentFourComponent } from './components/parent-four/parent-four.component';
+import { ChildFourComponent } from './components/child-four/child-four.component';
+import { ParentFiveComponent } from './components/parent-five/parent-five.component';
+import { ChildFiveComponent } from './components/child-five/child-five.component';
 
 
 @NgModule({
@@ -49,7 +55,13 @@ import { ChildThreeComponent } from './components/child-three/child-three.compon
     ParentTwoComponent,
     ChildTwoComponent,
     ParentThreeComponent,
-    ChildThreeComponent
+    ChildThreeComponent,
+    ParentLifeCycleComponent,
+    ChildLifeCycleComponent,
+    ParentFourComponent,
+    ChildFourComponent,
+    ParentFiveComponent,
+    ChildFiveComponent
   ],
   imports: [
     BrowserModule,

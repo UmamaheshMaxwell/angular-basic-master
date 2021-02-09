@@ -1,3 +1,4 @@
-1. pulling packages from different registery ?
-2. ng else if
-3. passing multiple inputs to custom directive
+1. pulling packages from different registery ? -  Done
+2. ng else if                                  -  Done
+3. passing multiple inputs to custom directive - Done
+4. Firing events and access third party components  - Yet to Answer

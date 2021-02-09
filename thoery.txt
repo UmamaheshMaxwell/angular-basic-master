@@ -292,3 +292,127 @@ Parent uses @viewChild to get reference to the child component
 1. Injecting an instance of the child component into the parent as @viewchild 
 2. @ViewChild decorator takes the name of the component/directive as its input
 3. The Angular then injects the reference of the component to the property
+
+
+Angular LifeCycle Hooks
+-----------------------
+The life cycle hooks are the methods that angular invokes on the directives
+and components as it creates, changes and destroys them.
+
+We can fin-tune the behaviour of our components during its creation
+updation and destructions.
+
+List of Life cycle hooks
+-------------------------
+ngOnChanges
+ngOnInIt
+ngDoCheck
+ngAfterContentInIt
+ngAfterContentChecked
+ngAfterViewInit
+ngAfterViewChecked
+ngOnDestroy
+
+Constructor()
+---------------
+Life cycle of a component begin when Angular creates the component class
+First method that gets invoked is class constructor 
+
+Constructor is neither life Cycle hook nor it is specific to Angular. 
+It is Javascript feature.
+It is method which is invoked when class is created.
+
+ngOnChanges()
+-------------
+1. Angular invokes ngOnChanges life cycle hook when ever any data-bound 
+   input property of the component or directive changes.
+
+2. Initalizing the input properties is the first task that Angular does 
+   during the change detenction life cycle 
+
+3. If it detects any change in property then raises the ngOnchanges hook
+
+ngOnInit()
+-----------
+1. Angular raises the ngOninit hook, after it creates the component and updates
+   its properties
+
+2. It raises it after thengOnChanges hook
+
+3. This hook is fired only once and immediately after its creation 
+
+4. This is a perfect place where if we want to add any intialization
+   logic for our component
+
+5. Here we have access to every property of the compoent 
+
+6. None of the child components are available at this point.
+
+7. Hence properties we decorate with @ViewChild, @ViewChildren, 
+@ContentChild, @ContentChidren will not be available to use.
+
+ngDoCheck()
+-----------
+1. The angular invokes the ngDoCheck() hook during every change detection cycle
+2. This hook is invoked even if there is no change in any of the properties
+3. Angular invokes it after ngOnChanges && ngOninit hooks
+4. We use this hook to implement a custom change detection, wheneever Angular 
+   fails to detect the changes made to Input properties
+
+why OnChanges doesn't fire ?
+----------------------------
+1. the change detector raises onChanges hook , but it uses a different techniques 
+   for comparison 
+
+2. The change detector uses the === strict equality operator for detecting changes 
+   to the input properties
+
+3. For Primitive types like string and number, the above comparison works
+
+4. But in case of Object this fails. For Array/Objects, the strict checking 
+   means only refrences are checked. Since the reference remain same the 
+   Angular doesn not raise on change hook.
+
+     a = 10
+     a = 20;
+
+possible solutions
+---------------------
+1. create a new Object and copy old data to new Object 
+   
+    obj = {a:1}
+    obj = new obj()
+    obj.a =2;
+
+2. we can perform our own change detection using ngDoCheck life cycle hook
+
+ngOnDestroy
+------------
+1. It is called just before the component / Directive instance is destroyed by angular
+2. We use this hook to perform any cleanup logic for the component
+3. This is the correct place where you would like to unsubscribe observables 
+   and detach event handlers to avoid meomory leaks
+
+Angular Forms
+--------------
+The Angular forms are used to collect the data from Users
+
+Somethings forms are expected to do 
+
+1. Initialize the form fields
+2. capture the data from users
+3. Track the changes
+4. validate the inputs
+5. display helpful errors to the users
+
+Types of Forms
+---------------
+Template Driven Forms
+Reactive Forms 
+
+Template Driven Forms
+---------------------
+1. There are simple forms which can be used to devlop webforms. 
+2. These are called template driven as everything that we are going to use in the application 
+   is defined in the template.
+
